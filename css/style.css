@@ -11,3 +11,14 @@ body{
     border-width: 2px;
     padding: 15px;
 }
+
+.juxtapose{
+    max-width: 450px;
+    margin: auto;
+}
+
+.table,
+.table tr,
+.table td {
+    background-color: white !important;
+}
