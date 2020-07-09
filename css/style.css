@@ -1,0 +1,13 @@
+body{
+    background-color: aliceblue;
+}
+.section-banner{
+    background-color: aliceblue;
+}
+
+.upload-section{
+    border-radius: 30px;
+    border-style: dashed;
+    border-width: 2px;
+    padding: 15px;
+}
