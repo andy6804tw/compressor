@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compressor</title>
-    <link rel="shortcut icon" href="./image/favicon.ico"/>
-    <link rel="bookmark" href="./image/favicon.ico"/>
+    <link rel="shortcut icon" href="./image/favicon.ico" />
+    <link rel="bookmark" href="./image/favicon.ico" />
 
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/progress-bar.css">
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"></link>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    </link>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
-    
+
 </head>
 
 <body>
@@ -29,9 +31,11 @@
                             .cls-1 {
                                 isolation: isolate;
                             }
+
                             .cls-0 {
                                 fill: transparent;
                             }
+
                             .cls-2 {
                                 fill: #fff;
                             }
@@ -730,38 +734,64 @@
                     <p>Drop your .png or .jpg files here!</p>
                     <p><small>Up to 20 images, max 5 MB each.</small></p>
                     <label class="btn btn-info">
-                    <input id="file-uploader" style="display:none;" type="file"><i class="fa fa-photo"></i> 上傳圖片</label>
+                        <input id="file-uploader" style="display:none;" type="file"><i class="fa fa-photo"></i>
+                        上傳圖片</label>
                 </section>
             </div>
         </div>
     </section>
     <!-- Result section -->
-    <section class="container-fluid p-5">
+    <section class="container-fluid p-5" style="background-color: #fff;">
         <div class="row justify-content-center align-items-center">
-            <div class="col-4">
+            <div class="col-md-12 col-lg-5">
                 <div class="juxtapose"></div>
             </div>
-            <div class="col-6">
+            <div class="col-md-12 col-lg-6 pt-md-4">
                 <table class="table table-sm">
                     <tbody>
-                      <tr>
-                        <td>test1.jpg</td>
-                        <td class="text-center">Otto</td>
-                        <td class="text-right"><a href="http://">download</a> −79%</td>
-                      </tr>
-                      <tr>
-                        <td>test2.jpg</td>
-                        <td class="text-center">Thornton</td>
-                        <td class="text-right"><a href="http://">download</a> −60%</td>
-                      </tr>
+                        <tr>
+                            <td>test1.jpg</td>
+                            <td class="text-center">
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-3 p-0">
+                                        <span class="file-size">550.1 KB</span>
+                                    </div>
+                                    <div class="col-6 p-0">
+                                        <progress id="bar" class="skill-2" max="100" value="0"> </progress>
+                                    </div>
+                                    <div class="col-3 p-0">
+                                        <span class="file-size">65 KB</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-right"><a href="http://">download</a>&nbsp;&nbsp; −79%</td>
+                        </tr>
+                        <tr>
+                            <td>test2.jpg</td>
+                            <td class="text-center">
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-3 p-0">
+                                        <span class="file-size">550.1 KB</span>
+                                    </div>
+                                    <div class="col-6 p-0">
+                                        <progress id="bar" class="skill-2" max="100" value="0"> </progress>
+                                    </div>
+                                    <div class="col-3 p-0">
+                                        <span class="file-size">65 KB</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-right"><a href="http://">download</a>&nbsp;&nbsp; −60%</td>
+                        </tr>
                     </tbody>
-                  </table>
+                </table>
             </div>
-          </div>
+        </div>
     </section>
 
 
     <script src="./js/index.js"></script>
+    <script src="./js/upload.js"></script>
 </body>
 
 </html>

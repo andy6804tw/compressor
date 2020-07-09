@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CSS Bar Chart Using HTML5 Progress</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <h3>Bow Staff</h3>
+  <progress id="bar" class="skill-2" max="100" value="75">
+    <strong>Skill Level: 75%</strong>
+  </progress>
+  <!-- partial -->
+
+  <script>
+    const bar = document.getElementById("bar");
+
+
+    let value = 0;
+    const timer = window.setInterval((() => {
+      console.log(value)
+      value += 10
+      bar.setAttribute("value", value);
+      if (value >= 100)
+        clearInterval(timer);
+    }), 1000);
+  </script>
+</body>
+
+</html>

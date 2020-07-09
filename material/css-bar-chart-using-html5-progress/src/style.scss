@@ -1,0 +1,83 @@
+@import "compass/css3";
+
+// Body Styles
+body { 
+  font-family: "Helvetica Neue", arial, sans-serif;
+  padding: 2em;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+h3 { font-size: 2em; }
+
+// Progress Bars
+progress, progress[role] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-size: auto;
+  height: 100px;
+  width: 100%;
+}
+
+// The unordered list
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+
+// The list item
+.skill {
+  margin-bottom: 1em;
+  position: relative;
+  h3 {
+    color: #fff;
+    left: 1em;
+    line-height: 1;
+    position: absolute;
+    top: 1em;
+  }
+  ::-webkit-progress-value { 
+    -webkit-animation: bar-fill 2s;
+    width: 0px;
+  }
+}
+
+// Style the bar colors
+.skill-1::-webkit-progress-value {
+  background: #ff9e2c;
+}
+
+.skill-1::-moz-progress-bar {
+  background: #ff9e2c;
+}
+
+.skill-2::-webkit-progress-value {
+  background: #4ecdc4;
+}
+
+.skill-2::-moz-progress-bar {
+  background: #4ecdc4;
+}
+
+.skill-3::-webkit-progress-value {
+  background: #ff6b6b;
+}
+
+.skill-3::-moz-progress-bar {
+  background: #ff6b6b;
+}
+
+// Animation Keyframes
+@-webkit-keyframes bar-fill {
+  0% { width: 0; }
+}
+
+@keyframes bar-fill {
+  0% { width: 0; }
+}

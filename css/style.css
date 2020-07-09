@@ -13,6 +13,7 @@ body{
 }
 
 .juxtapose{
+    width: 100%;
     max-width: 450px;
     margin: auto;
 }
@@ -21,4 +22,9 @@ body{
 .table tr,
 .table td {
     background-color: white !important;
+}
+
+.table .file-size{
+    font-weight: 500;
+    font-size: 10px;
 }
