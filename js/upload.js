@@ -45,6 +45,21 @@ const initTableResult = (fileList) => {
   initProgressBar(fileList.length);
 }
 
+/**
+ * 壓縮所有圖片
+ * @param {*} fileList 
+ * { oldImg, width, height, newImg, imgNewHeight, imgNewWidth }
+ */
+const compressAllImage=async(fileList)=>{
+  let compressResultList=[];
+  for(let i=0;i<fileList.length;i++){
+    const compImage = await getCompressImage(fileList[i].file, fileList[i].sizeImage, fileList[i].oldImageUrl);
+    compressResultList.push(compImage);
+  }
+  console.log(compressResultList.length);
+  compareImage(compressResultList[0].oldImg, compressResultList[0].newImg);
+}
+
 document.getElementById("file-uploader").addEventListener('change', async (event) => {
   let fileList = [];
   for (let i = 0; i < fileUploader.files.length; i++) {
@@ -56,7 +71,8 @@ document.getElementById("file-uploader").addEventListener('change', async (event
   // 初始化 Result Table
   initTableResult(fileList);
   // 壓縮圖片
-  const compImage = await getCompressImage(fileList[0].file, fileList[0].sizeImage, fileList[0].oldImageUrl);
+  compressAllImage(fileList);
+  
   // console.log(compImage.oldImg);
-  compareImage(compImage.oldImg, compImage.newImg);
+  // compareImage(compImage.oldImg, compImage.newImg);
 });
