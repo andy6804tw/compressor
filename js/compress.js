@@ -24,16 +24,6 @@ const getSize = (file) => new Promise((resolve, reject) => {
     imgDom = img;
 });
 
-document.getElementById("file-uploader").addEventListener('change', async (event) => {
-    const file = fileUploader.files[0];
-    const sizeImage = await getSize(file);
-    const oldImageUrl = await toBase64(file);
-    const compImage = await getCompressImage(file, sizeImage, oldImageUrl);
-    console.log(compImage.oldImg);
-    compareImage(compImage.oldImg, compImage.newImg);
-});
-
-
 
 const getCompressImage = (file, sizeImage, oldImg) => new Promise((resolve, reject) => {
     var width = sizeImage.width, // 圖片原始寬度

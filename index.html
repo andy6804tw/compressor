@@ -734,7 +734,7 @@
                     <p>Drop your .png or .jpg files here!</p>
                     <p><small>Up to 20 images, max 5 MB each.</small></p>
                     <label class="btn btn-info">
-                        <input id="file-uploader" style="display:none;" type="file"><i class="fa fa-photo"></i>
+                        <input id="file-uploader" style="display:none;" type="file" multiple><i class="fa fa-photo"></i>
                         上傳圖片</label>
                 </section>
             </div>
@@ -748,41 +748,24 @@
             </div>
             <div class="col-md-12 col-lg-6 pt-md-4">
                 <table class="table table-sm">
-                    <tbody>
-                        <tr>
+                    <tbody id="tableResult">
+                        <!-- <tr id="item_1">
                             <td>test1.jpg</td>
                             <td class="text-center">
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-3 p-0">
-                                        <span class="file-size">550.1 KB</span>
+                                        <span class="file-size" id="fileSize_before_1">550.1 KB</span>
                                     </div>
                                     <div class="col-6 p-0">
-                                        <progress id="bar" class="skill-2" max="100" value="0"> </progress>
+                                        <progress id="progressBar_1" class="skill-2" max="100" value="0"> </progress>
                                     </div>
                                     <div class="col-3 p-0">
-                                        <span class="file-size">65 KB</span>
+                                        <span class="file-size" id="fileSize_after_1">65 KB</span>
                                     </div>
                                 </div>
                             </td>
-                            <td class="text-right"><a href="http://">download</a>&nbsp;&nbsp; −79%</td>
-                        </tr>
-                        <tr>
-                            <td>test2.jpg</td>
-                            <td class="text-center">
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-3 p-0">
-                                        <span class="file-size">550.1 KB</span>
-                                    </div>
-                                    <div class="col-6 p-0">
-                                        <progress id="bar" class="skill-2" max="100" value="0"> </progress>
-                                    </div>
-                                    <div class="col-3 p-0">
-                                        <span class="file-size">65 KB</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="text-right"><a href="http://">download</a>&nbsp;&nbsp; −60%</td>
-                        </tr>
+                            <td class="text-right" id="download_1"><a href="http://">download</a>&nbsp;&nbsp; −79%</td>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -790,7 +773,7 @@
     </section>
 
 
-    <script src="./js/index.js"></script>
+    <script src="./js/compress.js"></script>
     <script src="./js/upload.js"></script>
 </body>
 
