@@ -45,8 +45,8 @@ const getSize = (file) => new Promise((resolve, reject) => {
  *      {原始圖片長} height, 
  *      {壓縮後圖片} newImg,
  *      {壓縮後圖片大小} newImageSize, 
- *      {壓縮後圖片寬} imgNewHeight, 
- *      {壓縮後圖片長} imgNewWidth
+ *      {壓縮後圖片長} imgNewHeight, 
+ *      {壓縮後圖片寬} imgNewWidth
  */
 const getCompressImage = (file, sizeImage, oldImg) => new Promise((resolve, reject) => {
     let canvas = document.createElement("canvas");
