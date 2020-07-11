@@ -28,3 +28,20 @@ body{
     font-weight: 500;
     font-size: 10px;
 }
+
+/* Footer */
+#site-footer {
+    position: relative;
+    background-color: #40444f;
+    height: 90px;
+  }
+.copy{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size:12px;
+    text-align:center;
+    color: white;
+    font-weight: 300;
+}
+  
