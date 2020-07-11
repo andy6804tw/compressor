@@ -58,19 +58,20 @@ const initTableResult = (fileList) => {
     <td class="text-center">
         <div class="row justify-content-center align-items-center">
             <div class="col-3 p-0">
-                <span class="file-size" id="fileSize_before_${i + 1}">${Math.round(fileList[i].fileSize / 1000)} KB</span>
+                <span id="fileSize_before_${i + 1}">${Math.round(fileList[i].fileSize / 1000)} KB</span>
             </div>
             <div class="col-6 p-0">
                 <progress id="progressBar_${i + 1}" class="skill-2" max="100" value="0"> </progress>
             </div>
             <div class="col-3 p-0">
-                <span class="file-size" id="fileSize_after_${i + 1}"></span>
+                <span id="fileSize_after_${i + 1}"></span>
             </div>
         </div>
     </td>
     <td class="text-right" id="download_${i + 1}">
         <i class="fas fa-search" id="lookup_${i + 1}" onclick="lookup(id)"></i>
-        <i class="fas fa-download" id="download_${i + 1}" onclick="downloadImage(id)"></i>&nbsp;&nbsp; −79%
+        <i class="fas fa-download" id="download_${i + 1}" onclick="downloadImage(id)"></i>&nbsp;
+        <span id="offSize_${i+1}">-68%</span>
     </td>
   </tr>`;
     tableResult.innerHTML = tableHTML;
@@ -87,8 +88,11 @@ const finishAllProcess = (compressResultList) => {
   for (let i = 0; i < compressResultList.length; i++) {
     const progressBar = document.getElementById(`progressBar_${i + 1}`);
     const fileSizeAfter = document.getElementById(`fileSize_after_${i + 1}`);
+    const offSize=document.getElementById(`offSize_${i+1}`);
     progressBar.setAttribute("value", "100");
     fileSizeAfter.innerText = `${compressResultList[i].newImageSize} KB`;
+    const reduce=Math.round((compressResultList[i].oldImageSize-compressResultList[i].newImageSize)/compressResultList[i].oldImageSize*100);
+    offSize.innerText=`-${reduce}%`
   }
 }
 
@@ -96,12 +100,14 @@ const finishAllProcess = (compressResultList) => {
  * 壓縮所有圖片
  * @param {*} fileList
  * GET:
- *    {原始圖片base64格式} oldImg, 
- *    {原始圖片寬} width, 
- *    {原始圖片長} height, 
- *    {壓縮後圖片} newImg, 
- *    {壓縮後圖片長} imgNewHeight, 
- *    {壓縮後圖片寬} imgNewWidth
+ *      {原始圖片base64格式} oldImg
+ *      {原始圖片大小} oldImageSize, 
+ *      {原始圖片寬} width, 
+ *      {原始圖片長} height, 
+ *      {壓縮後圖片} newImg,
+ *      {壓縮後圖片大小} newImageSize, 
+ *      {壓縮後圖片長} imgNewHeight, 
+ *      {壓縮後圖片寬} imgNewWidth
  */
 const compressAllImage = async (fileList) => {
   compressResultList = [];

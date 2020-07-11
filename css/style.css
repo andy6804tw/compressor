@@ -24,9 +24,9 @@ body{
     background-color: white !important;
 }
 
-.table .file-size{
+.table span{
     font-weight: 500;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .table .fas{
