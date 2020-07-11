@@ -45,6 +45,13 @@ const initTableResult = (fileList) => {
   initProgressBar(fileList.length);
 }
 
+const finishAllProcess=(compressResultList)=>{
+  for(let i=0;i<compressResultList.length;i++){
+      const progressBar=document.getElementById(`progressBar_${i + 1}`);
+      progressBar.setAttribute("value","100");
+  }
+}
+
 /**
  * 壓縮所有圖片
  * @param {*} fileList 
@@ -58,6 +65,7 @@ const compressAllImage=async(fileList)=>{
   }
   console.log(compressResultList.length);
   compareImage(compressResultList[0].oldImg, compressResultList[0].newImg);
+  finishAllProcess(compressResultList);
 }
 
 document.getElementById("file-uploader").addEventListener('change', async (event) => {
