@@ -1,6 +1,7 @@
 
 const tableResult = document.getElementById("tableResult");
 const processImage = document.getElementById("processImage");
+let compressResultList=[];
 
 /**
  * 隨機取得0~max間的Int亂數
@@ -29,6 +30,11 @@ const initProgressBar = (count) => {
   }
 }
 
+const lookup=(idName)=>{
+  const id=Number(idName.split("_")[1])-1;
+  compareImage(compressResultList[id].oldImg, compressResultList[id].newImg);
+}
+
 /**
  * 初始化 Result table 中的詳細資訊，並啟動 initProgressBar()
  * @param {File檔案類型} fileList 
@@ -51,7 +57,10 @@ const initTableResult = (fileList) => {
             </div>
         </div>
     </td>
-    <td class="text-right" id="download_${i + 1}"></td>
+    <td class="text-right" id="download_${i + 1}">
+        <i class="fas fa-search" id="lookup_${i + 1}" onclick="lookup(id)"></i>
+        <i class="fas fa-download"></i>&nbsp;&nbsp; −79%
+    </td>
   </tr>`;
     tableResult.innerHTML = tableHTML;
   }
@@ -84,7 +93,7 @@ const finishAllProcess = (compressResultList) => {
  *    {壓縮後圖片寬} imgNewWidth
  */
 const compressAllImage = async (fileList) => {
-  let compressResultList = [];
+  compressResultList = [];
   for (let i = 0; i < fileList.length; i++) {
     const compImage = await getCompressImage(fileList[i].file, fileList[i].sizeImage, fileList[i].oldImageUrl);
     compressResultList.push(compImage);
