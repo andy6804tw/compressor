@@ -1,7 +1,8 @@
 
 const tableResult = document.getElementById("tableResult");
 const processImage = document.getElementById("processImage");
-let compressResultList=[];
+let compressResultList = [];
+let fileList = [];
 
 /**
  * 隨機取得0~max間的Int亂數
@@ -30,9 +31,19 @@ const initProgressBar = (count) => {
   }
 }
 
-const lookup=(idName)=>{
-  const id=Number(idName.split("_")[1])-1;
+const lookup = (idName) => {
+  const id = Number(idName.split("_")[1]) - 1;
   compareImage(compressResultList[id].oldImg, compressResultList[id].newImg);
+}
+
+const downloadImage = (idName) => {
+  const id = Number(idName.split("_")[1]) - 1;
+  var a = document.createElement('a');
+  a.href = `data:image/jpeg;base64,${compressResultList[id].newImg}`;
+  a.download = fileList[id].fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
 /**
@@ -59,7 +70,7 @@ const initTableResult = (fileList) => {
     </td>
     <td class="text-right" id="download_${i + 1}">
         <i class="fas fa-search" id="lookup_${i + 1}" onclick="lookup(id)"></i>
-        <i class="fas fa-download"></i>&nbsp;&nbsp; −79%
+        <i class="fas fa-download" id="download_${i + 1}" onclick="downloadImage(id)"></i>&nbsp;&nbsp; −79%
     </td>
   </tr>`;
     tableResult.innerHTML = tableHTML;
@@ -84,7 +95,7 @@ const finishAllProcess = (compressResultList) => {
 /**
  * 壓縮所有圖片
  * @param {*} fileList
- * Return:
+ * GET:
  *    {原始圖片base64格式} oldImg, 
  *    {原始圖片寬} width, 
  *    {原始圖片長} height, 
@@ -112,7 +123,7 @@ document.getElementById("file-uploader").addEventListener('change', async (event
   // Add process animated
   processImage.classList.remove("d-none");
   // GET all input files
-  let fileList = [];
+  fileList = [];
   for (let i = 0; i < fileUploader.files.length; i++) {
     const file = fileUploader.files[i];
     const sizeImage = await getSize(file);
