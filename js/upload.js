@@ -1,5 +1,6 @@
 
 const tableResult = document.getElementById("tableResult");
+const processImage=document.getElementById("processImage");
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -68,11 +69,15 @@ const compressAllImage=async(fileList)=>{
   }
   setTimeout(function(){
     finishAllProcess(compressResultList);
+    processImage.classList.add("d-none");
     compareImage(compressResultList[0].oldImg, compressResultList[0].newImg);
   },2000)
 }
 
 document.getElementById("file-uploader").addEventListener('change', async (event) => {
+  // Add process animated
+  processImage.classList.remove("d-none");
+  // GET all input files
   let fileList = [];
   for (let i = 0; i < fileUploader.files.length; i++) {
     const file = fileUploader.files[i];
