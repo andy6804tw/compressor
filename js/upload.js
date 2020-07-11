@@ -1,6 +1,8 @@
 
 const tableResult = document.getElementById("tableResult");
 const processImage = document.getElementById("processImage");
+const sectionDemo=document.getElementById("sectionDemo");
+const sectionResult=document.getElementById("sectionResult");
 let compressResultList = [];
 let fileList = [];
 
@@ -126,6 +128,9 @@ const compressAllImage = async (fileList) => {
  * Input 監聽事件，當有偵測到使用者上傳圖片即觸發此函式
  */
 document.getElementById("file-uploader").addEventListener('change', async (event) => {
+  // show Result Section
+  sectionResult.classList.remove("d-none");
+  sectionDemo.classList.add("d-none");
   // Add process animated
   processImage.classList.remove("d-none");
   // GET all input files
