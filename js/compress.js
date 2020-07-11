@@ -32,6 +32,7 @@ const getCompressImage = (file, sizeImage, oldImg) => new Promise((resolve, reje
         imgNewHeight = imgNewWidth * height / width, // 圖片新高度
         html = "",
         newImg;
+    const oldImageSize=Math.round(file.size / 1000);
     console.log("檔案大小約 " + Math.round(file.size / 1000));
 
     // 使用 canvas 調整圖片寬高
@@ -45,8 +46,9 @@ const getCompressImage = (file, sizeImage, oldImg) => new Promise((resolve, reje
     // 顯示新圖片
     newImg = canvas.toDataURL("image/jpeg", compressRatio).split(",")[1];
     oldImg = oldImg.split(",")[1]
+    const newImageSize=Math.round(0.75 * newImg.length / 1000);
     console.log("檔案大小約 " + Math.round(0.75 * newImg.length / 1000));
-    resolve({ oldImg, width, height, newImg, imgNewHeight, imgNewWidth });
+    resolve({ oldImg,oldImageSize, width, height, newImg,newImageSize, imgNewHeight, imgNewWidth });
 });
 
 /** Comparison of image */

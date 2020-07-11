@@ -48,7 +48,10 @@ const initTableResult = (fileList) => {
 const finishAllProcess=(compressResultList)=>{
   for(let i=0;i<compressResultList.length;i++){
       const progressBar=document.getElementById(`progressBar_${i + 1}`);
+      const fileSizeAfter = document.getElementById(`fileSize_after_${i + 1}`);
       progressBar.setAttribute("value","100");
+      fileSizeAfter.innerText=`${compressResultList[i].newImageSize} KB`;
+      console.log(compressResultList)
   }
 }
 
