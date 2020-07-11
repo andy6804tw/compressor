@@ -28,7 +28,7 @@ const initTableResult = (fileList) => {
     <td class="text-center">
         <div class="row justify-content-center align-items-center">
             <div class="col-3 p-0">
-                <span class="file-size" id="fileSize_before_${i + 1}">${fileList[i].fileSize / 1000} KB</span>
+                <span class="file-size" id="fileSize_before_${i + 1}">${Math.round(fileList[i].fileSize / 1000)} KB</span>
             </div>
             <div class="col-6 p-0">
                 <progress id="progressBar_${i + 1}" class="skill-2" max="100" value="0"> </progress>
@@ -66,10 +66,9 @@ const compressAllImage=async(fileList)=>{
     const compImage = await getCompressImage(fileList[i].file, fileList[i].sizeImage, fileList[i].oldImageUrl);
     compressResultList.push(compImage);
   }
-  console.log(compressResultList.length);
-  compareImage(compressResultList[0].oldImg, compressResultList[0].newImg);
   setTimeout(function(){
     finishAllProcess(compressResultList);
+    compareImage(compressResultList[0].oldImg, compressResultList[0].newImg);
   },2000)
 }
 
