@@ -29,6 +29,14 @@ body{
     font-size: 10px;
 }
 
+.table .fas{
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 3px;
+    cursor: pointer;
+}
+
 /* Footer */
 #site-footer {
     position: relative;
