@@ -7,13 +7,13 @@ function getRandomInt(max) {
 
 const initProgressBar = (count) => {
   for (let i = 0; i < count; i++) {
-    const bar = document.getElementById(`progressBar_${i+1}`);
-    let value = 0;
+    const progressBar = document.getElementById(`progressBar_${i+1}`);
     const timer = window.setInterval((() => {
+      let value = Number(progressBar.getAttribute("value"));
       value += getRandomInt(30);
       if (value >= 50)
         value += 10;
-      bar.setAttribute("value", value);
+        progressBar.setAttribute("value", value);
       if (value >= 100)
         clearInterval(timer);
     }), 1000);
@@ -65,7 +65,9 @@ const compressAllImage=async(fileList)=>{
   }
   console.log(compressResultList.length);
   compareImage(compressResultList[0].oldImg, compressResultList[0].newImg);
-  finishAllProcess(compressResultList);
+  setTimeout(function(){
+    finishAllProcess(compressResultList);
+  },2000)
 }
 
 document.getElementById("file-uploader").addEventListener('change', async (event) => {
