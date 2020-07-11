@@ -53,7 +53,9 @@ const getCompressImage = (file, sizeImage, oldImg) => new Promise((resolve, reje
 
 /** Comparison of image */
 const compareImage = (imgBefore, imgAfter) => {
-    document.getElementsByClassName('juxtapose')[0].innerHTML = '';
+    const juxtaposeDom=document.getElementsByClassName('juxtapose')[0];
+    juxtaposeDom.innerHTML = "";
+    juxtaposeDom.classList.add("animate__fadeIn");
     slider = new juxtapose.JXSlider('.juxtapose',
         [
             {
@@ -78,5 +80,6 @@ const compareImage = (imgBefore, imgAfter) => {
 
     setTimeout(function () {
         document.getElementsByClassName("jx-knightlab")[0].remove();
+        juxtaposeDom.classList.remove("animate__fadeIn");
     }, 500)
 }
