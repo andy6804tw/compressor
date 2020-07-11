@@ -76,10 +76,10 @@ const getCompressImage = (file, sizeImage, oldImg) => new Promise((resolve, reje
  * @param {*} imgAfter 
  */
 const compareImage = (imgBefore, imgAfter) => {
-    const juxtaposeDom = document.getElementsByClassName('juxtapose')[0];
+    const juxtaposeDom = document.getElementsByClassName('juxtapose-result')[0];
     juxtaposeDom.innerHTML = "";
     juxtaposeDom.classList.add("animate__fadeIn");
-    slider = new juxtapose.JXSlider('.juxtapose',
+    slider = new juxtapose.JXSlider('.juxtapose-result',
         [
             {
                 src: `data:image/jpeg;base64,${imgBefore}`,

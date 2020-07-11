@@ -12,7 +12,12 @@ body{
     padding: 15px;
 }
 
-.juxtapose{
+.juxtapose-demo{
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+.juxtapose-result{
     width: 100%;
     max-width: 450px;
     margin: auto;
