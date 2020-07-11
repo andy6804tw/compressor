@@ -18,14 +18,14 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 </head>
 
 <body>
     <section class="container-fluid section-banner">
         <div class="row justify-content-center align-items-center">
-            <div class="col-md-12 col-lg-5">
+            <div class="col-md-12 col-lg-7 col-xl-6 px-5">
                 <img src="./image/banner.svg" alt="" srcset="">
             </div>
             <div class="col-md-12  col-lg-4">
@@ -41,7 +41,7 @@
         </div>
     </section>
     <!-- Section demo -->
-    <section class="container-fluid p-5 " id="sectionDemo" style="background-color: #fff;">
+    <section class="container-fluid p-5" id="sectionDemo" style="background-color: #fff;">
         <h2 class="mb-4 text-center">Can you tell the difference?</h2>
         <div class="juxtapose-demo"> </div>
     </section>
@@ -84,8 +84,8 @@
 
     <section class="container my-5">
         <div class="row justify-content-center align-items-center">
-            <div class="col-6">
-                <h2>How does it work?</h2>
+            <div class="col-md-12 col-lg-6">
+                <h2>How does it work?</h2><br>
                 Compressing image with HTML5 canvas.
                 <ul class="pr-0 pl-3">
                     <li>Read the files using the HTML5 FileReader API.</li>
@@ -94,7 +94,7 @@
                     <li>On backend, read the dataURI, decode from Base64, and save it.</li>
                 </ul>
             </div>
-            <div class="col-5">
+            <div class="ol-md-12 col-lg-5 animated" id="zoomIn">
                 <img src="./image/illustration.svg" alt="" srcset="">
             </div>
         </div>
@@ -111,6 +111,7 @@
     </section>
 
     <script src="./js/index.js"></script>
+    <script src="./js/animated.js"></script>
     <script src="./js/compress.js"></script>
     <script src="./js/upload.js"></script>
 </body>
