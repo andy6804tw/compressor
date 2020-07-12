@@ -51,17 +51,18 @@ const getSize = (file) => new Promise((resolve, reject) => {
 const getCompressImage = (file, sizeImage, oldImg) => new Promise((resolve, reject) => {
     let canvas = document.createElement("canvas");
     let context = canvas.getContext("2d");
+    imgNewWidth=sizeImage.width/2;
     let width = sizeImage.width, // 圖片原始寬度
         height = sizeImage.height, // 圖片原始高度
         imgNewHeight = imgNewWidth * height / width; // 圖片新高度
     // 取得原始圖片大小
     const oldImageSize = Math.round(file.size / 1000);
     // 使用 canvas 調整圖片寬高
-    canvas.width = width;
-    canvas.height = height;
-    context.clearRect(0, 0, width, height);
+    canvas.width = imgNewWidth;
+    canvas.height = imgNewHeight;
+    context.clearRect(0, 0, imgNewWidth, imgNewHeight);
     // 調整canvas圖片尺寸
-    context.drawImage(sizeImage.img, 0, 0, width, height);
+    context.drawImage(sizeImage.img, 0, 0, imgNewWidth, imgNewHeight);
     // 顯示新圖片
     let newImg = canvas.toDataURL("image/jpeg", compressRatio).split(",")[1];
     oldImg = oldImg.split(",")[1]
