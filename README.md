@@ -1,6 +1,10 @@
 # Compressor
-The online image compressor. Reduce image size of JPEG, PNG files online.
+> The online image compressor. Reduce image size of JPEG, PNG files online.
 Compress images and photos for displaying on web pages.
+
+![](./screenshot/demo.gif)
+
+[Website](andy6804tw.github.io/compressor/)
 
 ## How does it work?
 Compressing image with HTML5 canvas.
