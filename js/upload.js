@@ -73,7 +73,7 @@ const initTableResult = (fileList) => {
     <td class="text-right" id="download_${i + 1}">
         <i class="fas fa-search" id="lookup_${i + 1}" onclick="lookup(id)"></i>
         <i class="fas fa-download" id="download_${i + 1}" onclick="downloadImage(id)"></i>&nbsp;
-        <span id="offSize_${i+1}">-68%</span>
+        <span id="offSize_${i+1}"></span>
     </td>
   </tr>`;
     tableResult.innerHTML = tableHTML;

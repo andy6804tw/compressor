@@ -1,6 +1,15 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 body{
     background-color: aliceblue;
+    font-family: 'Noto Sans TC', sans-serif;
 }
+
+nav .active{
+    border-top:1px #000 solid;
+    border-bottom:1px #000 solid;
+    
+}
+
 .section-banner{
     background-color: aliceblue;
 }
@@ -12,6 +21,10 @@ body{
     padding: 15px;
 }
 
+/* Section demo */
+.section-demo h2{
+    font-weight: bold;
+}
 .juxtapose-demo{
     width: 100%;
     max-width: 900px;
@@ -40,6 +53,42 @@ body{
     border-width: 1px;
     padding: 3px;
     cursor: pointer;
+}
+/* Section Description */
+.section-desc h5{
+    font-weight: bold;
+}
+.section-desc p{
+    font-size: 14px;
+}
+.section-desc #browser-support {
+	margin: 1em 0;
+	padding: 0
+}
+
+.section-desc #browser-support li {
+	float: left;
+	font-size: 14px;
+	line-height: 30px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 10px;
+	width: 120px
+}
+
+@media (max-width:992px) {
+	.section-desc #browser-support li {
+		display: inline-block;
+		float: none;
+		font-size: 12px;
+		white-space: nowrap;
+		width: auto
+	}
+}
+
+.section-desc #browser-support img {
+	margin-right: 8px;
+	vertical-align: middle
 }
 
 /* Footer */

@@ -296,9 +296,9 @@
                             }
 
                             .cls-69 {
-                                font-size: 36px;
+                                font-size: 32px;
                                 fill: #00a49f;
-                                font-family: MyriadPro-Regular, Myriad Pro;
+                                font-family: 'Noto Sans TC', sans-serif;
                             }
 
                             .cls-70 {

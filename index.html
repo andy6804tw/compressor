@@ -19,10 +19,35 @@
     <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 
 </head>
 
 <body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tutorial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Documentation</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">FAQ</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    <!-- banner -->
     <section class="container-fluid section-banner">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-12 col-lg-7 col-xl-6 px-5">
@@ -41,7 +66,7 @@
         </div>
     </section>
     <!-- Section demo -->
-    <section class="container-fluid p-5" id="sectionDemo" style="background-color: #fff;">
+    <section class="section-demo container-fluid p-5" id="sectionDemo" style="background-color: #fff;">
         <h2 class="mb-4 text-center">Can you tell the difference?</h2>
         <div class="juxtapose-demo"> </div>
     </section>
@@ -81,21 +106,69 @@
             </div>
         </div>
     </section>
-
+    <!--  -->
+    <section class="section-desc contaioner p-5">
+        <div class="container content-box">
+            <div class="row description">
+                <!--  Description: Upload  -->
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <h5 class="content-box-title">File Formats</h5>
+                    <p>
+                        You can upload up to 20 images (max. 1.00 MB each) as JPG, PNG, GIF, WebP, SVG or BMP.<br>
+                        <br>
+                        Please note that Internet Explorer 8 has a limit of 32 KB for <a href="http://en.wikipedia.org/wiki/Data_URI_scheme" target="_blank">data URI</a>.
+                        Versions below have no support.
+                    </p>
+                </div>
+                <!--  Image Optimization  -->
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <h5 class="content-box-title">Image optimization</h5>
+                    <p>
+                        We can optimize your JPEG &amp; PNG images, using <a href="http://www.kokkonen.net/tjko/projects.html" target="_blank">jpegoptim</a> and
+                        <a href="http://optipng.sourceforge.net/" target="_blank">optipng</a>. This will reduce the file without any visible impact
+                        (in most cases).
+                    </p>
+                </div>
+                <!--  Description: Browser Support -->
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <h5 class="content-box-title">Browser Support</h5>
+                    <p>
+                        The <strong>encoded results</strong> are <strong>compatible</strong> with all of the following browsers and versions. Please send me a note if there are issues.
+                    </p>
+                    <ul id="browser-support">
+                        <li>
+                            <img src="https://www.base64-image.de/build/img/browser-icons/chrome_24x24-a7ca66e6b4.png" alt="" width="24" height="24" title="Google Chrome">Chrome 4+</li>
+                        <li>
+                            <img src="https://www.base64-image.de/build/img/browser-icons/safari_24x24-4b9304e7c1.png" alt="" width="24" height="24" title="Apple Safari">Safari 3.1+</li>
+                        <li>
+                            <img src="https://www.base64-image.de/build/img/browser-icons/firefox_24x24-9cb479bf41.png" alt="" width="24" height="24" title="Mozilla Firefox">Firefox 2+</li>
+                        <li>
+                            <img src="https://www.base64-image.de/build/img/browser-icons/opera_24x24-1e135b7c74.png" alt="" width="24" height="24" title="Opera">Opera 9+</li>
+                        <li>
+                            <img src="https://www.base64-image.de/build/img/browser-icons/edge_24x24-11efc6ad6b.png" alt="" width="24" height="24" title="Microsoft Edge">Edge
+                        </li>
+                        <li>
+                            <img src="https://www.base64-image.de/build/img/browser-icons/ie9-10_24x24-4a2e4800a5.png" alt="" width="24" height="24" title="Microsoft Internet Explorer">IE 8+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="container my-5">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-12 col-lg-6">
-                <h2>How does it work?</h2><br>
-                Compressing image with HTML5 canvas.
+                <h2>How does it work?</h2>
+                <p>Compressing image with HTML5 canvas.</p>
                 <ul class="pr-0 pl-3">
-                    <li>Read the files using the HTML5 FileReader API.</li>
-                    <li>Image file to base64 format.</li>
-                    <li>Send the image to the canvas. The canvas size is set to desired output size.</li>
-                    <li>On backend, read the dataURI, decode from Base64, and save it.</li>
+                    <li class="pb-2">Read the files using the HTML5 FileReader API.</li>
+                    <li class="pb-2">Image file to base64 format.</li>
+                    <li class="pb-2">Send the image to the canvas. The canvas size is set to desired output size.</li>
+                    <li class="pb-2">On backend, read the dataURI, decode from Base64, and save it.</li>
                 </ul>
             </div>
-            <div class="ol-md-12 col-lg-5 animated" id="zoomIn">
-                <img src="./image/illustration.svg" alt="" srcset="">
+            <div class="ol-md-12 col-lg-5">
+                <img class="animated"  id="zoomIn" src="./image/illustration.svg" alt="" srcset="">
             </div>
         </div>
     </section>
